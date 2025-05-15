@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ir a Web</title>
+    <style>
+        .menu-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 20px; 
+        }
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .mensaje {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        button{
+            background: #663535;
+            color: aliceblue;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s ease;
+        }
+        button:hover {
+            background: #e74949;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mensaje">Introduce la dirección web:</div>
+    <input type="text" id="urlInput" placeholder="Ejemplo: https://www.google.com">
+    <button onclick="abrirEnNuevaPestaña()">Ir a la Web</button>
+
+    <script>
+        function abrirEnNuevaPestaña() {
+            const urlInput = document.getElementById("urlInput");
+            const url = urlInput.value.trim();
+
+            if (url !== "") {
+                let fullUrl = url;
+                if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                    fullUrl = "https://" + url;
+                }
+                window.open(fullUrl, '_blank');
+            } else {
+                alert("Por favor, introduce una dirección web.");
+            }
+        }
+    </script>
+
+    <button class="menu-button botonBonito1 btn-block"
+    onclick="window.location.href='./index.html'">Volver al menú</button>
+</body>
+</html>

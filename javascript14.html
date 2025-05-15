@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 14</title>
+    <style>
+        .menu-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 20px; 
+        }
+        button{
+            background: #663535;
+            color: aliceblue;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s ease;
+        }
+        button:hover{
+            background: #e74949;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="mostrarAlertaPersonalizada('¡Este es un mensaje importante!')">Mostrar Alerta</button>
+
+    <script>
+        function mostrarAlertaPersonalizada(mensaje) {
+          alert(mensaje);
+        }
+    </script>
+    <button class="menu-button botonBonito1 btn-block"
+    onclick="window.location.href='./index.html'">Volver al menú</button>
+</body>
+</html>

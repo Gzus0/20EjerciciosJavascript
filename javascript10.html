@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 10</title>
+    <style>
+        .menu-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 20px; 
+        }
+        .restart-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 160px; 
+        }
+        #miLista {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        button{
+            background: #663535;
+            color: aliceblue;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s ease;
+        }
+        button:hover{
+            background: #e74949;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul id="miLista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+    </ul>
+    <button onclick="agregarItemLista()">Añadir Item a la Lista</button>
+
+    <script>
+        function agregarItemLista() {
+          const lista = document.getElementById("miLista");
+          const nuevoItem = document.createElement("li");
+          nuevoItem.textContent = "Nuevo Item";
+          lista.appendChild(nuevoItem);
+        }
+    </script>
+    <button class="restart-button botonBonito1 btn-block"
+    onclick="window.location.href='./javascript10.html'">Reiniciar</button>
+    <button class="menu-button botonBonito1 btn-block"
+    onclick="window.location.href='./index.html'">Volver al menú</button>
+</body>
+</html>

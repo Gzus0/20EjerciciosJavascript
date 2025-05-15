@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 7</title>
+    <style>
+        .menu-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 20px; 
+        }
+        .restart-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 160px; 
+        }
+        #contador2 {
+            font-size: 1.5em;
+            margin: 10px;
+        }
+        button{
+            background: #663535;
+            color: aliceblue;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s ease;
+        }
+        button:hover{
+            background: #e74949;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="contador2">Contador: 10</div>
+    <button onclick="decrementarContador()">Decrementar</button>
+
+    <script>
+        let contador2 = 10;
+        function decrementarContador() {
+          contador2--;
+          document.getElementById("contador2").textContent = "Contador: " + contador2;
+        }
+    </script>
+    <button class="restart-button botonBonito1 btn-block"
+    onclick="window.location.href='./javascript7.html'">Reiniciar</button>
+    <button class="menu-button botonBonito1 btn-block"
+    onclick="window.location.href='./index.html'">Volver al menú</button>
+</body>
+</html>

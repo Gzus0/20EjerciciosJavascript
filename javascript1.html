@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1</title>
+    <style>
+        .menu-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 20px; 
+        }
+        button{
+            background: #663535;
+            color: aliceblue;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s ease; /* Añadimos una transición suave */
+        }
+        button:hover{
+            background: #e74949;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <button id="miBoton" onclick="cambiarTextoYColor()">Hola soy un boton</button>
+    <script>
+
+        const miBoton = document.getElementById("miBoton");
+        const textoOriginal = miBoton.textContent;
+        const colorOriginal = miBoton.style.backgroundColor;
+        const nuevoTexto = "¡Waos, soy el mismo botón! (pero diferente xd)";
+        const nuevoColor = "#2e8b57"; /* Un verde bonito */
+
+        function cambiarTextoYColor() {
+          if (miBoton.textContent === textoOriginal) {
+            miBoton.textContent = nuevoTexto;
+            miBoton.style.backgroundColor = nuevoColor;
+          } else {
+            miBoton.textContent = textoOriginal;
+            miBoton.style.backgroundColor = colorOriginal;
+          }
+        }
+        
+    </script>
+    <button class="menu-button botonBonito1 btn-block"
+    onclick="window.location.href='./index.html'">Volver al menú</button>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 5</title>
+    <style>
+        .menu-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 20px; 
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px;
+        }
+        button{
+            background: #663535;
+            color: aliceblue;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s ease;
+        }
+        button:hover{
+            background: #e74949;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="miInput" placeholder="Introduce texto aquí">
+    <button onclick="validarEntrada()">Validar Entrada</button>
+
+    <script>
+        function validarEntrada() {
+          const input = document.getElementById("miInput");
+          if (input.value.trim() === "") {
+            alert("Por favor, introduce algún texto.");
+          } else {
+            alert("Texto introducido: " + input.value);
+          }
+        }
+    </script>
+    <button class="menu-button botonBonito1 btn-block"
+    onclick="window.location.href='./index.html'">Volver al menú</button>
+</body>
+</html>

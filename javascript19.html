@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 19</title>
+    <style>
+        .menu-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 20px; 
+        }
+        #miLista3 {
+            list-style-type: square;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        button{
+            background: #663535;
+            color: aliceblue;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s ease;
+        }
+        button:hover{
+            background: #e74949;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul id="miLista3">
+        <li>Manzana</li>
+        <li>Banana</li>
+        <li>Naranja</li>
+        <li>Kiwi</li>
+        <li>Uva</li>
+    </ul>
+    <button onclick="filtrarListaPorLetra('a')">Filtrar por 'a'</button>
+    <button onclick="filtrarListaPorLetra('n')">Filtrar por 'n'</button>
+
+    <script>
+        function filtrarListaPorLetra(letra) {
+          const listaItems = document.querySelectorAll("#miLista3 li");
+          const elementosFiltrados = [];
+          listaItems.forEach(item => {
+            if (item.textContent.toLowerCase().includes(letra.toLowerCase())) {
+              elementosFiltrados.push(item.textContent);
+            }
+          });
+          alert("Elementos que contienen '" + letra + "': " + elementosFiltrados.join(", "));
+        }
+    </script>
+    <button class="menu-button botonBonito1 btn-block"
+    onclick="window.location.href='./index.html'">Volver al menú</button>
+</body>
+</html>

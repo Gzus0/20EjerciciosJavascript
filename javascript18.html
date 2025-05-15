@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Lista en Tiempo Real</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .menu-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 20px; 
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+        button{
+            background: #663535;
+            color: aliceblue;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s ease;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="filtro">Filtrar lista:</div>
+    <input type="text" id="filtro" onkeyup="filtrarLista()">
+
+    <ul id="listaElementos">
+        <li>Manzana</li>
+        <li>Banana</li>
+        <li>Naranja</li>
+        <li>Kiwi</li>
+        <li>Uva</li>
+        <li>Mandarina</li>
+        <li>Frambuesa</li>
+    </ul>
+
+    <script>
+        const filtroInput = document.getElementById("filtro");
+        const lista = document.getElementById("listaElementos");
+        const elementosLista = lista.getElementsByTagName("li");
+
+        function filtrarLista() {
+            const textoFiltro = filtroInput.value.toLowerCase();
+
+            for (let i = 0; i < elementosLista.length; i++) {
+                const elemento = elementosLista[i];
+                const textoElemento = elemento.textContent.toLowerCase();
+
+                if (textoElemento.includes(textoFiltro)) {
+                    elemento.classList.remove("oculto");
+                } else {
+                    elemento.classList.add("oculto");
+                }
+            }
+        }
+    </script>
+    <button class="menu-button botonBonito1 btn-block"
+    onclick="window.location.href='./index.html'">Volver al menú</button>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 8</title>
+    <style>
+        .menu-button{
+            position: fixed;
+            bottom: 20px; /* Ajusta este valor según el espacio que quieras */
+            left: 20px; 
+        }
+        #miImagen {
+            width: 500px;
+            height: auto;
+            margin: 10px;
+        }
+        button{
+            background: #663535;
+            color: aliceblue;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s ease;
+        }
+        button:hover{
+            background: #e74949;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <img id="miImagen" src="imagenes/nobitches.png" alt="Imagen" style="display: none;">
+    <button onclick="alternarImagen()">Mostrar/Ocultar Imagen</button>
+
+    <script>
+        function alternarImagen() {
+          const imagen = document.getElementById("miImagen");
+          imagen.style.display = (imagen.style.display === "none") ? "block" : "none";
+        }
+    </script>
+    <button class="menu-button botonBonito1 btn-block"
+    onclick="window.location.href='./index.html'">Volver al menú</button>
+</body>
+</html>
